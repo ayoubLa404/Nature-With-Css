@@ -1,25 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Press+Start+2P&display=swap');
-
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Press+Start+2P&display=swap");
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -27,164 +15,117 @@ body {
   line-height: 1.7;
   font-weight: 400;
   color: #fff;
-  padding: 3rem;
-}
+  padding: 3rem; }
 
 .header {
   width: 100%;
   height: 95vh;
-
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url('../img/hero.jpg');
-
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-position: top;
   background-size: cover;
-  /* clip the image */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__white-logo {
-  height: 3.6rem;
-  object-fit: cover;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  text-align: center;
-}
+  /* btn of the landpage */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__white-logo {
+    height: 3.5rem;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-select: none; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase; }
+  .header__btn--white {
+    background-color: #fff;
+    color: #777;
+    letter-spacing: 0.2px; }
 
 .heading-primary {
   /* this for animation side effect */
   backface-visibility: hidden;
-
-  margin-bottom: 6rem;
-}
-
-.header-primary--main {
-  display: block;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-
-  animation-name: to-left;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-@keyframes to-left {
-  0% {
-    transform: translateX(-10rem);
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    transform: translateX(0rem);
-    opacity: 1;
-  }
-}
-
-.header-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-
-  animation: to-right 1s ease-out;
-}
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    font-size: 6rem;
+    display: block;
+    letter-spacing: 3.5rem;
+    animation-name: to-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
 
 @keyframes to-right {
   0% {
-    transform: translateX(10rem);
-    opacity: 0;
-    pointer-events: none;
-  }
+    transform: translateX(-10rem);
+    opacity: 0; }
   80% {
-    transform: translateX(-1rem);
-  }
+    transform: translateX(1rem); }
   100% {
     transform: translateX(0rem);
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
+    opacity: 1; } }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    animation: to-left 1s ease-out; }
 
-/* unverse btn*/
+@keyframes to-left {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0; }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    transform: translateX(0rem);
+    opacity: 1; } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   border: 0;
   cursor: pointer;
   text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.4rem 4rem;
-  display: inline-block;
-  color: #777;
-  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
   border-radius: 10rem;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  display: inline-block;
+  font-size: 1.6rem;
+  position: relative; }
 
 .btn::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: inherit;
   width: 100%;
   height: 100%;
-  display: inline-block;
+  border-radius: inherit;
   z-index: -1;
-  transition: all 0.4s;
-}
-.btn:hover::after {
-  background-color: #fff;
-  transform: scale(1.4, 1.6);
-  opacity: 0;
-}
+  display: inline-block;
+  transition: all 0.4s; }
 
-/* btn of the landpage */
-.header__btn-white {
-  background-color: #fff;
-  letter-spacing: 1px;
-}
-
-.btn-animated {
-  animation: to-top 0.4s ease-out 0.5s backwards;
-  /* animation-fill-mode: backwards; */
-}
-
-@keyframes to-top {
-  from {
-    transform: translateY(10rem);
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scale(1.4, 1.6);
     opacity: 0;
-  }
+    background-color: #fff; }
 
-  to {
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--animated {
+  animation: to-up 0.4s ease-out 0.5s backwards; }
+
+@keyframes to-up {
+  0% {
+    transform: translateY(10rem);
+    opacity: 0; }
+  100% {
     transform: translateY(0rem);
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
