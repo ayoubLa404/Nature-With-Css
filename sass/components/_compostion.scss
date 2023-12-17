@@ -1,0 +1,41 @@
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    position: absolute;
+    object-fit: cover;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: 0.4);
+    border-radius: 4px;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+
+    &--ph1 {
+      top: -2rem;
+      left: 0;
+    }
+    &--ph2 {
+      top: 2rem;
+      right: 0;
+    }
+    &--ph3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:hover {
+      z-index: 20;
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, $alpha: 0.5);
+      outline: 1.4rem solid $color-primary;
+    }
+  }
+
+  // if we hover over an image the other imgs zoom out
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}
+// .composition:hover .composition__photo:not(:hover) {
+//   transform: scale(0.95);
+// }
