@@ -1,0 +1,35 @@
+/**
+ * Basic typography style for copy text
+ */
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+  padding: 3rem;
+  color: $color-black;
+}
+
+.heading-primary {
+  /* this for animation side effect */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  color: $color-white;
+
+  &--main {
+    font-size: 6rem;
+    display: block;
+    letter-spacing: 3.5rem;
+
+    animation-name: to-right;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    animation: to-left 1s ease-out;
+  }
+}
