@@ -37,6 +37,23 @@
 .gap-large {
   gap: 6rem;
 }
+.gap-huge {
+  gap: 8rem;
+}
+
+.d-f {
+  display: flex;
+}
+.d-f-center-h {
+  justify-content: center;
+}
+.d-f-center-v {
+  align-items: center;
+}
+
+.d-f-v {
+  flex-direction: column;
+}
 
 .row {
   max-width: 114rem;
