@@ -1,0 +1,103 @@
+.form {
+  &__control:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    width: 90%;
+    display: block;
+    border: none;
+    font-size: $default-font-size;
+    color: inherit;
+    font-family: inherit;
+    background-color: rgba($color-white, $alpha: 0.5);
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border-bottom: 3px solid transparent;
+
+    transition: all 0.5s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, $alpha: 0.1);
+      border-bottom-color: $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid orangered;
+    }
+
+    &::placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown ~ &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  //style radio buttons
+  &__radio-box {
+    display: inline-block;
+    width: 49%;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+  }
+
+  &__radio-styled {
+    cursor: pointer;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    transform: translateY(1rem);
+    margin-right: 1.4rem;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1.2rem;
+      height: 1.2rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  // hide the real radio input
+  &__radio {
+    display: none;
+  }
+  // not(:checked)
+  &__radio:invalid + &__radio-label &__radio-styled {
+    border: 5px solid orangered;
+  }
+  /*
+  if the real radio checked when we click the label the faked radio (inside the label ⛔⛔)
+    input checked also
+  */
+  &__radio:checked + &__radio-label &__radio-styled::after {
+    opacity: 1;
+  }
+}
