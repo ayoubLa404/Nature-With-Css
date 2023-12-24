@@ -1,3 +1,56 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+  background-color: $color-grey-darkest;
+  padding: 10rem 0;
+  color: $color-grey-light-1;
+  font-size: calc(#{$default-font-size} - 0.2rem);
+
+  &__logo-box {
+    text-align: center;
+  }
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+    // height: 12rem;
+  }
+
+  &__navigation {
+    width: 38.1%;
+    display: inline-block;
+    padding-top: 2rem;
+    border-top: 1px solid $color-grey-dark-2;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      color: inherit;
+      background-color: $color-grey-darkest;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, $alpha: 0.3);
+      transform: scale(1.3) rotate(5deg);
+    }
+  }
+
+  &__copy-right {
+    width: 38.1%;
+    padding-top: 2rem;
+    border-top: 1px solid $color-grey-dark-2;
+  }
+}
