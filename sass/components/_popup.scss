@@ -1,0 +1,90 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color-black, $alpha: 0.8);
+  z-index: 40;
+  // hide the popup
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+
+  &__box {
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, $alpha: 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    display: table;
+
+    // hide the box
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s ease-in 0.2s;
+  }
+
+  &__left {
+    width: 33.33333%;
+    display: table-cell;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__right {
+    width: 66.66667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+  &__paragraphe {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // to make text sepearte to columns
+    column-count: 2;
+    column-gap: 3.6rem;
+    column-rule: 1px solid $color-grey-dark-2;
+
+    // when a wrod ended add - and break it
+    hyphens: auto;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      color: $color-grey-dark;
+      font-size: 3rem;
+      line-height: 1;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  //functionality
+  // this means if an anchor has target the popup this happend
+  &:target {
+    // show the popup
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  // if the popup is target this what happend to the  box inside the poput
+  &:target &__box {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
