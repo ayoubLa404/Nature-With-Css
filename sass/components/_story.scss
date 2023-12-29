@@ -7,8 +7,21 @@
   width: 75%;
   transform: skewX(-12deg);
 
+  @include respond(tab-portrait) {
+    width: 100%;
+    padding: 5rem 4rem;
+  }
+  @include respond(phone) {
+    width: 95%;
+    padding: 3rem;
+    transform: skewX(0deg);
+  }
   &__text-box {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0deg);
+    }
   }
 
   &__img-box {
@@ -26,6 +39,18 @@
     overflow: hidden;
     position: relative;
     transform: skewX(12deg);
+
+    @include respond(tab-portrait) {
+      width: 12rem;
+      height: 12rem;
+    }
+    @include respond(phone) {
+      width: 10rem;
+      height: 10rem;
+      transform: skewX(0deg);
+      margin-bottom: 0.4rem;
+      margin-right: 2rem;
+    }
     &::after {
       content: '';
       display: table;

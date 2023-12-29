@@ -3,6 +3,12 @@
     margin-bottom: 2rem;
   }
 
+  &__control:last-child {
+    @include respond(tab-portrait) {
+      text-align: center;
+    }
+  }
+
   &__input {
     width: 90%;
     display: block;
@@ -16,6 +22,16 @@
     border-bottom: 3px solid transparent;
 
     transition: all 0.5s;
+
+    @include respond(tab-portrait) {
+      background-color: rgba($color-white, $alpha: 0.8);
+      box-shadow: 0 1.6rem 3.4rem rgba($color-black, $alpha: 0.15);
+    }
+    @include respond(phone) {
+      width: 100%;
+      background-color: rgba($color-white, $alpha: 0.8);
+      box-shadow: 0 1.6rem 3.4rem rgba($color-black, $alpha: 0.15);
+    }
 
     &:focus {
       outline: none;
@@ -52,6 +68,15 @@
   &__radio-box {
     display: inline-block;
     width: 49%;
+    @include respond(tab-portrait) {
+      display: block;
+      width: 90%;
+      &:not(:last-child) {
+        margin-bottom: 1.6rem;
+      }
+    }
+    @include respond(phone) {
+    }
   }
 
   &__radio-label {

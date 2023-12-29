@@ -8,6 +8,14 @@
   color: $color-grey-light-1;
   font-size: calc(#{$default-font-size} - 0.2rem);
 
+  @include respond(tab-portrait) {
+    padding: 8rem 0;
+  }
+
+  @include respond(tab-portrait) {
+    padding: 6rem 0;
+  }
+
   &__logo-box {
     text-align: center;
   }
@@ -16,6 +24,14 @@
     width: 15rem;
     height: auto;
     // height: 12rem;
+
+    @include respond(tab-portrait) {
+      width: 12rem;
+    }
+
+    @include respond(phone) {
+      width: 12rem;
+    }
   }
 
   &__navigation {
@@ -23,13 +39,35 @@
     display: inline-block;
     padding-top: 2rem;
     border-top: 1px solid $color-grey-dark-2;
+
+    @include respond(tab-portrait) {
+      width: 100%;
+      padding-top: 1.6rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      padding-top: 1.4rem;
+    }
   }
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
+
     align-items: center;
     gap: 1.5rem;
     text-transform: uppercase;
+
+    @include respond(tab-portrait) {
+      justify-content: center;
+      gap: 1.4rem;
+    }
+
+    @include respond(phone) {
+      gap: 1.2rem;
+      justify-content: center;
+    }
   }
 
   &__link {
@@ -52,5 +90,35 @@
     width: 38.1%;
     padding-top: 2rem;
     border-top: 1px solid $color-grey-dark-2;
+
+    @include respond(tab-portrait) {
+      text-align: center;
+      width: 100%;
+      padding-top: 1.6rem;
+    }
+
+    @include respond(phone) {
+      text-align: center;
+      width: 100%;
+      padding-top: 1.4rem;
+    }
+  }
+
+  &__grid {
+    @include respond(tab-portrait) {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      gap: 3.4rem;
+    }
+
+    @include respond(phone) {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
   }
 }

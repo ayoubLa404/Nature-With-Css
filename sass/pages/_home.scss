@@ -6,6 +6,16 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0rem;
   margin-top: -20vh;
+
+  @include respond(tab-portrait) {
+    padding: 20rem 0rem;
+    margin-top: -10vh;
+  }
+
+  @include respond(phone) {
+    padding: 16rem 0rem;
+    margin-top: -10vh;
+  }
 }
 
 .section-feature {
@@ -25,17 +35,50 @@
   & > * {
     transform: skewY(7deg);
   }
+
+  @include respond(tab-landSkape) {
+    padding: 18rem 0rem;
+  }
+  @include respond(tab-portrait) {
+    padding: 15rem 0rem;
+  }
+
+  @include respond(phone) {
+    padding: 12rem 0rem;
+  }
 }
 
 .section-tours {
   padding: 25rem 0 15rem 0;
   background-color: $color-grey-light-1;
   margin-top: -8rem;
+
+  @include respond(tab-landSkape) {
+    padding: 22rem 0 11rem 0;
+  }
+  @include respond(tab-portrait) {
+    padding: 20rem 0 10rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 18rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   position: relative;
+
+  @include respond(tab-landSkape) {
+    padding: 12rem 0;
+  }
+  @include respond(tab-portrait) {
+    padding: 10rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 8rem 0;
+  }
 }
 
 .section-book {
@@ -45,6 +88,17 @@
     $color-primary-light,
     $color-primary-dark
   );
+
+  @include respond(tab-landSkape) {
+    padding: 12rem 0;
+  }
+  @include respond(tab-portrait) {
+    padding: 10rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 8rem 0;
+  }
 }
 
 .book {
@@ -56,8 +110,23 @@
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: 0.25);
 
+  @include respond(tab-portrait) {
+    box-shadow: 0 1.2rem 3rem rgba($color-black, $alpha: 0.2);
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.85),
+        rgba($color-white, 0.86)
+      ),
+      url('../img/nat-10.jpg');
+  }
+
   &__form {
     width: 50%;
     padding: 4rem 6rem;
+
+    @include respond(tab-portrait) {
+      width: 100%;
+      padding: 4rem 4rem;
+    }
   }
 }

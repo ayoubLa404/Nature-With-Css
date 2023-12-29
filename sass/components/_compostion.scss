@@ -10,17 +10,41 @@
     transition: all 0.2s;
     outline-offset: 2rem;
 
+    @include respond(tab-portrait) {
+      position: relative;
+      width: 30%;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, $alpha: 0.2);
+    }
+
     &--ph1 {
       top: -2rem;
       left: 0;
+
+      @include respond(tab-portrait) {
+        top: 2rem;
+        left: 1rem;
+        transform: scale(1.2);
+      }
     }
     &--ph2 {
-      top: 2rem;
+      top: 1rem;
       right: 0;
+
+      @include respond(tab-portrait) {
+        transform: scale(1.3);
+        z-index: 14;
+        right: -1.8rem;
+      }
     }
     &--ph3 {
       top: 10rem;
       left: 20%;
+
+      @include respond(tab-portrait) {
+        top: 2rem;
+        left: 3.4rem;
+        transform: scale(1.2);
+      }
     }
 
     &:hover {
