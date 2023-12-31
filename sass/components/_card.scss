@@ -172,7 +172,9 @@
   }
 
   // media query bc there are a lot of changes
-  @include respond(tab-portrait) {
+  // ⛔⛔⛔ we use hover:none media bc we want to target all device that don't have hover like tablet
+  //  when thye're in landskape mode don't mix them with small pc
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     width: 85%;
     justify-self: center;

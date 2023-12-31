@@ -47,3 +47,30 @@ body {
     padding: 0rem;
   }
 }
+
+// style the selectioned text
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #f910f9 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 1vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: #3f3f3f;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: 20px;
+}
